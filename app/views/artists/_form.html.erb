@@ -2,7 +2,7 @@
 <%= form_for @artist.id ? Artist.find(params[:id]) : @artist do |f| %>
   <div>
     <%= f.label :name %>
-    <%= f.text_area :name %>
+    <%= f.text_field :name %>
   </div>
   <%= f.submit %>
 <% end %>
