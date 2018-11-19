@@ -16,9 +16,11 @@ class BillboardsController < ApplicationController
     @billboard = current_user.billboards.new(billboard_params)
 
     if @billboard.save
+      flash[:success] = 'Billboard Created'
       redirect_to @billboard
     else
       render :new
+      flash[:error] = "Error #{@account.errors.full_messages.join("\n")}"
     end
   end
 
