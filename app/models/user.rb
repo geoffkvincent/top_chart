@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :billboards
+  has_many :artists
 
   def full_name
     "#{self.first_name} #{self.last_name}"

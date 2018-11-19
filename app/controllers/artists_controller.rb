@@ -1,7 +1,7 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
   def index
-    @artists = Artist.all
+    @artists = current_user.artists
   end
 
   def show
@@ -13,7 +13,7 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    @artist = Artist.new(artist_params)
+    @artist = current_user.artist.new(artist_params)
 
     if @artist.save
       redirect_to @artist
@@ -42,7 +42,7 @@ class ArtistsController < ApplicationController
   private
 
   def set_artist
-    @artist = Artist.find(params[:id])
+    @artist = current_user.artists.find(params[:id])
   end
 
   def artist_params
