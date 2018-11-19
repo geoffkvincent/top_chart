@@ -1,0 +1,14 @@
+<h1>Add Song</h1>
+<%= form_for [@billboard, @song] do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :artist %>
+    <%= f.select :artist_id, @artists.collect { |u| [u.name, u.id] } %>
+  </div>
+  <br />
+  <%= f.submit %>
+<%end%>
+<h4>If you dont see the artist one <%= link_to 'here', new_artist_path %></h4>
