@@ -13,7 +13,7 @@ class BillboardsController < ApplicationController
   end
 
   def create
-    @billboard = Billboard.new(billboard_params)
+    @billboard = current_user.billboards.new(billboard_params)
 
     if @billboard.save
       redirect_to @billboard
@@ -27,7 +27,7 @@ class BillboardsController < ApplicationController
   end
 
   def update
-    if @billboard.update(billboard_params)
+    if @billboards.update(billboard_params)
       redirect_to @billboard
     else
       render :edit
@@ -42,7 +42,7 @@ class BillboardsController < ApplicationController
   private
 
   def set_billboard
-    @billboard = Billboard.find(params[:id])
+    @billboard = current_user.billboards.find(params[:id])
   end
 
   def billboard_params
