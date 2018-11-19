@@ -1,0 +1,8 @@
+<h1><%= @billboard.id ? 'Edit Billboard' : 'New Billboard' %></h1>
+<%= form_for @billboard.id ? Billboard.find(params[:id]) : @billboard do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <%= f.submit %>
+<%end%>
