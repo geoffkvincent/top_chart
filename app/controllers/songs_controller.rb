@@ -26,7 +26,7 @@ class SongsController < ApplicationController
   def destroy
     song = @billboard.songs.find(params[:id])
     song.destroy
-    redirect_to billboard_artists_path
+    redirect_to billboard_songs_path(@billboard)
   end
 
 private
