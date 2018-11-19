@@ -2,7 +2,7 @@
 <%= link_to 'Edit Artist', edit_artist_path(@artist) %> |
 <%= link_to 'Delete Artist', @artist, method: :delete %>
 <hr />
-<h2>Billboards</h2>
+<h2>Billboards <%= @artist.name %> appears on</h2>
 <ul>
   <% @artist.billboards.each do |billboard| %>
     <li>
