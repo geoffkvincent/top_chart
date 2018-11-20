@@ -1,8 +1,21 @@
 <h1><%= @billboard.id ? 'Edit Billboard' : 'New Billboard' %></h1>
-<%= form_for @billboard.id ? Billboard.find(params[:id]) : @billboard do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<div class="row">
+  <form class"row">
+    <%= form_for @billboard.id ? Billboard.find(params[:id]) : @billboard do |f| %>
+      <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+      <%= f.submit %>
+    <%end%>
+  <form>
+<div
+
+
+
+<div class="row">
+    <div class="input-field col s6">
+      <input value="Alvin" id="first_name2" type="text" class="validate">
+      <label class="active" for="first_name2">First Name</label>
+    </div>
   </div>
-  <%= f.submit %>
-<%end%>
