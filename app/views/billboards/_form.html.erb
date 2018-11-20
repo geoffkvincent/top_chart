@@ -1,23 +1,13 @@
 <h1><%= @billboard.id ? 'Edit Billboard' : 'New Billboard' %></h1>
-<div class="row">
-  <form class"col s12">
-    <div class="row">
-      <div class="input-field col s6">
-        <%= form_for @billboard.id ? Billboard.find(params[:id]) : @billboard do |f| %>
-          <label><%= f.label :name %></label>
-          <input <%= f.text_field :name %> >
-          <%= f.submit %>
-        <%end%>
-      </div>
-    </div>
+<%= form_for @billboard.id ? Billboard.find(params[:id]) : @billboard do |f| %>
   <form>
-<div
-
-
-
-<div class="row">
-    <div class="input-field col s6">
-      <input value="Alvin" id="first_name2" type="text" class="validate">
-      <label class="active" for="first_name2">First Name</label>
-    </div>
+  <div class="input-field col s12">
+    <%= f.label :name %>
+    <input placeholder="Placeholder" id="first_name" type="text" class="validate"><%= f.text_field :name %></input>
   </div>
+  <%= f.submit %>
+  </form>
+<%end%>
+
+
+
